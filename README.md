@@ -3,7 +3,12 @@ Explanation:
 Newsletter Pop-up: 
 A popup that appears 2 seconds after visiting the site, prompting users to sign up for the newsletter.
 
-Home Page: A header, bio about the band, tour dates, and links to music platforms.
+Home Page: 
+PURPLE REAKTOR4 LOGO 
+A header
+bio about the band
+tour dates
+links to music platforms
 
 Footer: Links to social media and copyright information.
 
