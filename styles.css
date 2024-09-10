@@ -13,9 +13,12 @@ header {
     padding: 2em;
 }
 
-h1 {
-    font-size: 3em;
-    margin: 0;
+#band-logo {
+    width: 300px; /* Adjust the size of the logo */
+    margin-top: 20px; /* Add some space above the logo */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 p {
