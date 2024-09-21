@@ -5,9 +5,9 @@ window.onload = function() {
     // Show the popup after 2 seconds
     setTimeout(() => {
         popup.style.display = 'flex';
-    }, 8000);
+    }, 2000);
 
-    // Close the popup
+    // Close the popup when the "Close" button is clicked
     closePopup.addEventListener('click', () => {
         popup.style.display = 'none';
     });
