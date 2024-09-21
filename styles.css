@@ -20,7 +20,11 @@ a:hover {
 header {
     background-color: #1b1b1b; /* Dark gray */
     padding: 2em;
-    border-bottom: 4px solid #ff4444; /* Bold red underline */
+    border-bottom: 4px solid #ffffff; /* Changed line to white */
+    background-image: url('Reaktor4 ms logo.jpg'); /* Background as logo image */
+    background-repeat: repeat; /* Repeating image for collage effect */
+    background-size: 200px; /* Adjust size of the logo in the collage */
+    background-position: center; /* Center the background */
 }
 
 h1 {
@@ -64,73 +68,8 @@ ul li {
     margin: 10px 0;
 }
 
-/* Band Logo */
-#band-logo {
-    width: 200px;
-    margin-top: 20px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
 /* Footer */
 footer {
     background-color: #1b1b1b;
     padding: 2em;
-    color: #b3b3b3;
-}
-
-footer p {
-    margin: 0;
-}
-
-/* Newsletter Popup */
-.popup {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.9);
-    justify-content: center;
-    align-items: center;
-}
-
-.popup-content {
-    background-color: #333;
-    padding: 2em;
-    border-radius: 10px;
-    width: 300px;
-    box-shadow: 0px 0px 10px 2px #ff4444;
-}
-
-.popup-content h2 {
-    color: #ff4444;
-}
-
-input[type="email"] {
-    width: 100%;
-    padding: 0.5em;
-    margin-bottom: 1em;
-    background-color: #0d0d0d;
-    color: #f4f4f4;
-    border: 2px solid #ff4444;
-}
-
-button {
-    background-color: #ff4444;
-    color: #fff;
-    padding: 0.5em 1em;
-    border: none;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #d32f2f;
-}
-
-#close-popup {
-    margin-top: 1em;
-    background-color: #444;
-}
+    color:
