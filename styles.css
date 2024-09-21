@@ -1,65 +1,136 @@
-/* Newsletter Pop-up */
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #0d0d0d; /* Very dark gray for background */
+    color: #f4f4f4; /* Light gray/white for text */
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+a {
+    color: #ff4444; /* Red for links */
+    text-decoration: none;
+}
+
+a:hover {
+    color: #ffd700; /* Gold on hover for contrast */
+}
+
+header {
+    background-color: #1b1b1b; /* Dark gray */
+    padding: 2em;
+    border-bottom: 4px solid #ff4444; /* Bold red underline */
+}
+
+h1 {
+    font-size: 3em;
+    font-weight: bold;
+    color: #ff4444; /* Bold red for band name */
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.tagline {
+    font-size: 1.2em;
+    color: #ffd700; /* Gold for tagline */
+    margin-top: 10px;
+}
+
+p {
+    font-size: 1.1em;
+    color: #b3b3b3; /* Lighter gray for text */
+}
+
+/* Sections */
+main {
+    padding: 2em;
+}
+
+section {
+    margin-bottom: 3em;
+    border-bottom: 2px solid #444; /* Grunge metal-like bottom border */
+    padding-bottom: 1em;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    font-size: 1.2em;
+    color: #ff4444; /* Red for tour dates */
+    margin: 10px 0;
+}
+
+/* Band Logo */
+#band-logo {
+    width: 200px;
+    margin-top: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Footer */
+footer {
+    background-color: #1b1b1b;
+    padding: 2em;
+    color: #b3b3b3;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Newsletter Popup */
 .popup {
-    display: none; /* Initially hidden */
+    display: none;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.9); /* Dark background with transparency */
+    background-color: rgba(0, 0, 0, 0.9);
     justify-content: center;
     align-items: center;
-    z-index: 1000;
 }
 
 .popup-content {
-    background-color: #2e2e2e; /* Dark grey for the popup box */
+    background-color: #333;
     padding: 2em;
     border-radius: 10px;
     width: 300px;
-    color: #fff; /* White text */
-    text-align: center;
+    box-shadow: 0px 0px 10px 2px #ff4444;
 }
 
 .popup-content h2 {
-    color: #c026d3; /* Neon purple for popup heading */
-    margin-bottom: 1em;
-}
-
-.popup-content p {
-    color: #e0e0e0; /* Light grey text */
+    color: #ff4444;
 }
 
 input[type="email"] {
     width: 100%;
     padding: 0.5em;
     margin-bottom: 1em;
-    background-color: #1b1b1b; /* Dark background for inputs */
-    color: #c026d3; /* Neon purple input text */
-    border: 1px solid #8afc56; /* Neon green border */
-    border-radius: 5px;
+    background-color: #0d0d0d;
+    color: #f4f4f4;
+    border: 2px solid #ff4444;
 }
 
 button {
-    background-color: #8afc56; /* Neon green buttons */
-    color: #0f0f0f; /* Dark text on buttons */
+    background-color: #ff4444;
+    color: #fff;
     padding: 0.5em 1em;
     border: none;
     cursor: pointer;
-    font-size: 1em;
-    transition: background-color 0.3s;
 }
 
 button:hover {
-    background-color: #6bd942; /* Slightly darker neon green on hover */
+    background-color: #d32f2f;
 }
 
 #close-popup {
     margin-top: 1em;
-    background-color: #f44336; /* Red close button */
-    color: #fff; /* White text on the close button */
-}
-
-#close-popup:hover {
-    background-color: #d32f2f; /* Darker red on hover */
+    background-color: #444;
 }
