@@ -59,6 +59,40 @@ ul li {
     margin: 10px 0;
 }
 
+/* Music Section with Collage */
+#music {
+    background-image: url('Reaktor4 The Cabin.jpeg'); /* Background as collage */
+    background-repeat: repeat; /* Repeat the image for collage effect */
+    background-size: 300px; /* Adjust the size of the image in the collage */
+    background-position: center; /* Center the collage */
+    padding: 2em; /* Add padding for spacing */
+    border-bottom: 2px solid #444; /* Add a grunge border at the bottom */
+    color: #fff; /* Ensure text is readable */
+}
+
+#music h2 {
+    font-size: 2em;
+    color: #ffd700; /* Gold for the heading */
+    margin-bottom: 1em;
+}
+
+#music p, #music ul li {
+    font-size: 1.2em;
+    color: #f4f4f4; /* Light gray for text to contrast with background */
+}
+
+#music ul li {
+    margin: 10px 0;
+}
+
+#music a {
+    color: #ff4444; /* Red for platform links */
+}
+
+#music a:hover {
+    color: #ffd700; /* Gold on hover */
+}
+
 /* Footer */
 footer {
     background-color: #1b1b1b;
