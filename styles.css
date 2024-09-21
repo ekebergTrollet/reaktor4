@@ -19,27 +19,18 @@ a:hover {
 
 header {
     background-color: #1b1b1b; /* Dark gray */
-    padding: 2em;
-    border-bottom: 4px solid #ffffff; /* Changed line to white */
-    background-image: url('Reaktor4 ms logo.jpg'); /* Background as logo image */
+    border-bottom: 4px solid #ffffff; /* White line at the bottom */
+    background-image: url('Reaktor4 ms logo.jpg'); /* Collage background */
     background-repeat: repeat; /* Repeating image for collage effect */
     background-size: 200px; /* Adjust size of the logo in the collage */
     background-position: center; /* Center the background */
+    height: 50px; /* Significantly reduce the height, reducing the space */
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margin */
 }
 
-h1 {
-    font-size: 3em;
-    font-weight: bold;
-    color: #ff4444; /* Bold red for band name */
-    margin: 0;
-    text-transform: uppercase;
-}
-
-.tagline {
-    font-size: 1.2em;
-    color: #ffd700; /* Gold for tagline */
-    margin-top: 10px;
-}
+/* Remove the logo and text overlay */
+/* Rest of the content remains unchanged */
 
 p {
     font-size: 1.1em;
