@@ -17,46 +17,16 @@ a:hover {
     color: #ffd700; /* Gold on hover for contrast */
 }
 
+/* Header with Collage */
 header {
-    background-color: #1b1b1b; /* Dark gray */
-    border-bottom: 4px solid #ffffff; /* White line at the bottom */
-    background-image: url('Reaktor4 ms logo.jpg'); /* Collage background */
+    background-image: url('Reaktor4 ms logo.jpg'); /* Background as collage */
     background-repeat: repeat; /* Repeating image for collage effect */
     background-size: 200px; /* Adjust size of the logo in the collage */
     background-position: center; /* Center the background */
-    height: 50px; /* Significantly reduce the height, reducing the space */
-    padding: 0; /* Remove padding */
-    margin: 0; /* Remove margin */
-}
-
-/* Remove the logo and text overlay */
-/* Rest of the content remains unchanged */
-
-p {
-    font-size: 1.1em;
-    color: #b3b3b3; /* Lighter gray for text */
-}
-
-/* Sections */
-main {
-    padding: 2em;
-}
-
-section {
-    margin-bottom: 3em;
-    border-bottom: 2px solid #444; /* Grunge metal-like bottom border */
-    padding-bottom: 1em;
-}
-
-ul {
-    list-style: none;
+    height: 65px; /* Increased space by 30% */
     padding: 0;
-}
-
-ul li {
-    font-size: 1.2em;
-    color: #ff4444; /* Red for tour dates */
-    margin: 10px 0;
+    margin: 0;
+    border-bottom: 4px solid #ffffff; /* White line at the bottom */
 }
 
 /* Music Section with Collage */
@@ -76,21 +46,23 @@ ul li {
     margin-bottom: 1em;
 }
 
-#music p, #music ul li {
-    font-size: 1.2em;
-    color: #f4f4f4; /* Light gray for text to contrast with background */
+#music ul {
+    list-style: none;
+    padding: 0;
 }
 
 #music ul li {
-    margin: 10px 0;
+    display: inline-block;
+    margin: 10px 20px;
 }
 
-#music a {
-    color: #ff4444; /* Red for platform links */
+.platform-logo {
+    width: 100px; /* Adjust the size of platform logos */
+    transition: transform 0.3s ease;
 }
 
-#music a:hover {
-    color: #ffd700; /* Gold on hover */
+.platform-logo:hover {
+    transform: scale(1.1); /* Slight zoom effect on hover */
 }
 
 /* Footer */
