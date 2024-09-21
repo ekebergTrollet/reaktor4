@@ -7,7 +7,7 @@ window.onload = function() {
         popup.style.display = 'flex';
     }, 2000);
 
-    // Close the popup when the "Close" button is clicked
+    // Close the popup
     closePopup.addEventListener('click', () => {
         popup.style.display = 'none';
     });
