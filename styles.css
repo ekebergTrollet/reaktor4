@@ -1,51 +1,84 @@
-/* Basic Styles */
+/* Body Style */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #111;
-    color: #f4f4f4;
+    font-family: 'Arial', sans-serif;
+    background-color: #0f0f0f; /* Dark background to match the logo */
+    color: #f4f4f4; /* White-ish text for contrast */
     margin: 0;
     padding: 0;
     text-align: center;
 }
 
+/* Header */
 header {
-    background-color: #1f1f1f;
+    background-color: #1f1f1f; /* Darker grey to contrast the body */
     padding: 2em;
 }
 
+/* Band Logo */
 #band-logo {
-    width: 400px; /* Adjust the size of the logo */
-    margin-top: 20px; /* Add some space above the logo */
+    width: 300px; /* Adjust the logo size as needed */
+    margin-top: 20px;
     display: block;
     margin-left: auto;
     margin-right: auto;
 }
 
-p {
-    font-size: 1.2em;
-    color: #b3b3b3;
-}
-
 /* Sections */
 main {
     padding: 2em;
+    background-color: #1b1b1b; /* Darker background for main content */
 }
 
 section {
     margin-bottom: 3em;
 }
 
-ul {
+/* Text Color Adjustments */
+h1, h2, p {
+    color: #e0e0e0; /* Light grey text */
+}
+
+/* Neon Purple and Green Colors */
+h2 {
+    color: #c026d3; /* Neon purple for headings */
+}
+
+a {
+    color: #8afc56; /* Neon green for links */
+    text-decoration: none;
+}
+
+/* Tour Dates */
+#tour-dates ul {
     list-style: none;
     padding: 0;
 }
 
-a {
-    color: #f44336;
-    text-decoration: none;
+#tour-dates li {
+    background-color: #2e2e2e; /* Darker background for tour items */
+    margin: 1em 0;
+    padding: 1em;
+    border-radius: 8px;
+    color: #c026d3; /* Neon purple text for tour dates */
 }
 
-/* Newsletter Popup */
+/* Buttons */
+button {
+    background-color: #8afc56; /* Neon green buttons */
+    color: #0f0f0f; /* Dark text on buttons */
+    padding: 0.5em 1em;
+    border: none;
+    cursor: pointer;
+    font-size: 1em;
+    margin-top: 1em;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #6bd942; /* Slightly darker neon green on hover */
+}
+
+/* Newsletter Pop-up */
 .popup {
     display: none;
     position: fixed;
@@ -53,37 +86,28 @@ a {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.9); /* Dark transparent background */
     justify-content: center;
     align-items: center;
 }
 
 .popup-content {
-    background-color: #333;
+    background-color: #2e2e2e; /* Dark grey for the popup box */
     padding: 2em;
-    border-radius: 8px;
+    border-radius: 10px;
     width: 300px;
+    color: #fff; /* White text */
 }
 
 input[type="email"] {
     width: 100%;
     padding: 0.5em;
     margin-bottom: 1em;
+    background-color: #1b1b1b; /* Dark background for inputs */
+    color: #c026d3; /* Neon purple input text */
+    border: 1px solid #8afc56; /* Neon green borders */
 }
 
-button {
-    background-color: #f44336;
-    color: #fff;
-    padding: 0.5em 1em;
-    border: none;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #d32f2f;
-}
-
-#close-popup {
-    margin-top: 1em;
-    background-color: #444;
-}
+/* Footer */
+footer {
+    background-color: #1f1f1
