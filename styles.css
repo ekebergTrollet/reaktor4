@@ -1,6 +1,6 @@
 /* General Styles */
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Arial', sans-serif; /* Default font for regular text */
     background-color: #0d0d0d; /* Very dark gray for background */
     color: #f4f4f4; /* Light gray/white for text */
     margin: 0;
@@ -8,61 +8,111 @@ body {
     text-align: center;
 }
 
-a {
-    color: #ff4444; /* Red for links */
-    text-decoration: none;
+/* Newsletter Popup - Initial Hidden State */
+.popup {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center the popup */
+    z-index: 1000; /* Ensure it appears above other elements */
+    background-color: rgba(0, 0, 0, 0.9); /* Dark overlay */
+    color: #fff;
+    border-radius: 10px;
+    padding: 2em;
+    box-shadow: 0px 0px 10px 2px #ff4444; /* Add a horror glow */
+    animation: none; /* Reset animations initially */
 }
 
-a:hover {
-    color: #ffd700; /* Gold on hover for contrast */
+/* Popup Content */
+.popup-content {
+    text-align: center;
 }
 
-/* Header with Collage */
-header {
-    background-image: url('Reaktor4 ms logo.jpg'); /* Background as collage */
-    background-repeat: repeat; /* Repeating image for collage effect */
-    background-size: 200px; /* Adjust size of the logo in the collage */
-    background-position: center; /* Center the background */
-    height: 65px; /* Increased space by 30% */
-    padding: 0;
-    margin: 0;
-    border-bottom: 4px solid #ffffff; /* White line at the bottom */
+.popup-content h2 {
+    font-family: 'Creepster', sans-serif; /* Horror font */
+    color: #ff4444;
 }
 
-/* Music Section with Collage */
+.popup-content button {
+    background-color: #ff4444;
+    color: #fff;
+    border: none;
+    padding: 0.5em 1em;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 1em;
+}
+
+.popup-content button:hover {
+    background-color: #d32f2f; /* Slightly darker on hover */
+}
+
+/* Animations */
+.fade-in {
+    animation: fadeIn 1s ease forwards;
+}
+
+.fade-out {
+    animation: fadeOut 1s ease forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+
+/* Horror Font for Headings */
+h1, h2, h3 {
+    font-family: 'Creepster', sans-serif; /* Horror font */
+    color: #ff4444;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+/* Banner Logo */
+.banner-logo {
+    width: auto;
+    max-height: 600px;
+    object-fit: contain;
+}
+
+/* Music Section */
 #music {
-    background-image: url('Reaktor4 The Cabin.jpeg'); /* Background as collage */
-    background-repeat: repeat; /* Repeat the image for collage effect */
-    background-size: 100px; /* Smaller size to increase collage count */
-    background-position: center; /* Center the collage */
-    padding: 2em; /* Add padding for spacing */
-    border-bottom: 2px solid #444; /* Add a grunge border at the bottom */
-    color: #fff; /* Ensure text is readable */
+    background-image: url('Reaktor4 The Cabin.jpeg');
+    background-repeat: repeat;
+    background-size: 100px;
+    background-position: center;
+    padding: 2em;
+    border-bottom: 2px solid #444;
+    color: #fff;
 }
 
 #music h2 {
-    font-size: 2em;
-    color: #ffd700; /* Gold for the heading */
-    margin-bottom: 1em;
-}
-
-#music ul {
-    list-style: none;
-    padding: 0;
-}
-
-#music ul li {
-    display: inline-block;
-    margin: 10px 20px;
+    font-size: 2.5em;
 }
 
 .platform-logo {
-    width: 100px; /* Adjust the size of platform logos */
+    width: 70px;
     transition: transform 0.3s ease;
 }
 
 .platform-logo:hover {
-    transform: scale(1.1); /* Slight zoom effect on hover */
+    transform: scale(1.1);
 }
 
 /* Footer */
@@ -74,55 +124,4 @@ footer {
 
 footer p {
     margin: 0;
-}
-
-/* Newsletter Popup */
-.popup {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.9);
-    justify-content: center;
-    align-items: center;
-}
-
-.popup-content {
-    background-color: #333;
-    padding: 2em;
-    border-radius: 10px;
-    width: 300px;
-    box-shadow: 0px 0px 10px 2px #ff4444;
-}
-
-.popup-content h2 {
-    color: #ff4444;
-}
-
-input[type="email"] {
-    width: 100%;
-    padding: 0.5em;
-    margin-bottom: 1em;
-    background-color: #0d0d0d;
-    color: #f4f4f4;
-    border: 2px solid #ff4444;
-}
-
-button {
-    background-color: #ff4444;
-    color: #fff;
-    padding: 0.5em 1em;
-    border: none;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #d32f2f;
-}
-
-#close-popup {
-    margin-top: 1em;
-    background-color: #444;
 }
