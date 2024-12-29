@@ -1,59 +1,67 @@
 /* General Styles */
 body {
-    font-family: 'Arial', sans-serif; /* Default font for regular text */
-    background-color: #0d0d0d; /* Very dark gray for background */
-    color: #f4f4f4; /* Light gray/white for text */
+    font-family: 'Arial', sans-serif;
+    background-color: #0d0d0d;
+    color: #f4f4f4;
     margin: 0;
     padding: 0;
     text-align: center;
-    line-height: 1.6; /* Improve readability */
+    line-height: 1.6;
 }
 
-/* Newsletter Popup - Initial Hidden State */
+/* Newsletter Popup */
 .popup {
     display: none; /* Hidden by default */
     position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%); /* Center the popup */
-    z-index: 1000; /* Ensure it appears above other elements */
+    transform: translate(-50%, -50%);
+    z-index: 1000;
     background-color: rgba(0, 0, 0, 0.9); /* Dark overlay */
     color: #fff;
     border-radius: 10px;
     padding: 2em;
-    box-shadow: 0px 0px 15px 3px #ff4444; /* Enhance the horror glow */
-    animation: none; /* Reset animations initially */
-    width: 90%; /* Responsive width for smaller devices */
+    box-shadow: 0px 0px 10px 2px #ff4444;
+    width: 90%; /* Responsive width */
     max-width: 400px; /* Limit width on larger screens */
 }
 
 /* Popup Content */
 .popup-content {
     text-align: center;
-    max-width: 100%; /* Ensure content is scalable */
 }
 
 .popup-content h2 {
-    font-family: 'Creepster', sans-serif; /* Horror font */
+    font-family: 'Creepster', sans-serif;
     color: #ff4444;
-    font-size: 1.8em; /* Scales properly for smaller devices */
+    font-size: 1.8em;
     margin-bottom: 1em;
 }
 
-.popup-content button {
+.popup-content button,
+.popup-content input[type="email"] {
     background-color: #ff4444;
     color: #fff;
     border: none;
-    padding: 0.7em 1.5em; /* Slightly larger buttons for better usability */
+    padding: 0.7em 1.5em;
     cursor: pointer;
     border-radius: 5px;
-    font-size: 1em; /* Adjust button text size */
-    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth hover effects */
+    margin-top: 1em;
+    font-size: 1em;
 }
 
 .popup-content button:hover {
-    background-color: #d32f2f; /* Slightly darker on hover */
-    transform: scale(1.05); /* Slight zoom effect */
+    background-color: #d32f2f;
+}
+
+.popup-content input[type="email"] {
+    width: 100%;
+    max-width: 300px;
+    margin: 0.5em 0;
+    padding: 0.5em;
+    border: 1px solid #444;
+    border-radius: 5px;
+    font-size: 1em;
 }
 
 /* Animations */
@@ -83,107 +91,17 @@ body {
     }
 }
 
-/* Horror Font for Headings */
-h1, h2, h3 {
-    font-family: 'Creepster', sans-serif; /* Horror font */
-    color: #ff4444;
-    text-transform: uppercase;
-    margin-bottom: 10px;
-    font-size: 2rem; /* Adjusted for better responsiveness */
-}
-
-/* Banner Logo */
-.banner-logo {
-    width: 100%; /* Fully responsive width */
-    max-width: 600px; /* Prevent it from growing too large */
+/* Header */
+header img {
+    width: 100%;
+    max-width: 600px; /* Prevents logo from being too large */
     height: auto; /* Maintains aspect ratio */
-    margin: 0 auto;
-    display: block; /* Centers the image */
-    filter: drop-shadow(0 0 10px #444); /* Add a subtle glow to the logo */
-}
-
-/* Music Section */
-#music {
-    background-image: url('SINGEL-ferdig-sepia.png');
-    background-repeat: no-repeat; /* Avoid repeating */
-    background-size: cover; /* Better scaling for larger screens */
-    background-position: center;
-    padding: 2em;
-    border-bottom: 2px solid #444;
-    color: #fff;
-    min-height: 300px; /* Ensure enough height for content */
-}
-
-#music h2 {
-    font-size: 2em; /* Reduced slightly for smaller screens */
-    margin-bottom: 1em;
-}
-
-.platform-logo {
-    width: 15%; /* Responsive width for scaling */
-    max-width: 80px; /* Limit size on larger screens */
-    height: auto; /* Maintain aspect ratio */
-    margin: 0.5em; /* Add spacing between logos */
-    transition: transform 0.3s ease, filter 0.3s ease; /* Add smooth effects */
-}
-
-.platform-logo:hover {
-    transform: scale(1.1);
-    filter: brightness(1.2); /* Brighten slightly on hover */
+    margin: 20px auto;
 }
 
 /* Footer */
 footer {
-    background-color: #1b1b1b;
-    padding: 2em;
+    margin-top: 20px;
     color: #b3b3b3;
-    font-size: 0.9em; /* Adjust font size for smaller screens */
-}
-
-footer p {
-    margin: 0;
-    line-height: 1.5;
-}
-
-/* Media Queries for Responsiveness */
-@media (max-width: 768px) {
-    h1, h2, h3 {
-        font-size: 1.5em; /* Scale down headings for tablets */
-    }
-
-    #music {
-        padding: 1em;
-    }
-
-    .popup-content h2 {
-        font-size: 1.5em; /* Adjust font size for smaller screens */
-    }
-
-    .platform-logo {
-        width: 20%; /* Scale platform logos for smaller devices */
-        max-width: 60px;
-    }
-}
-
-@media (max-width: 480px) {
-    body {
-        font-size: 0.9em; /* Scale body text for smaller devices */
-    }
-
-    h1, h2, h3 {
-        font-size: 1.2em; /* Scale down headings for phones */
-    }
-
-    .banner-logo {
-        max-width: 300px; /* Scale down banner logo for smaller screens */
-    }
-
-    .popup-content {
-        width: 95%; /* Scale pop-up width for smaller devices */
-    }
-
-    .platform-logo {
-        width: 25%; /* Scale platform logos even smaller */
-        max-width: 50px;
-    }
+    font-size: 0.9em;
 }
