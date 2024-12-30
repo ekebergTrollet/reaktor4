@@ -9,33 +9,33 @@ body {
     line-height: 1.6;
 }
 
+/* Horror Font for Headings */
+h1, h2, h3 {
+    font-family: 'Creepster', sans-serif;
+    color: #ff4444;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
 /* Newsletter Popup */
 .popup {
-    display: none; /* Hidden by default */
+    display: none;
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 1000;
-    background-color: rgba(0, 0, 0, 0.9); /* Dark overlay */
+    background-color: rgba(0, 0, 0, 0.9);
     color: #fff;
     border-radius: 10px;
     padding: 2em;
     box-shadow: 0px 0px 10px 2px #ff4444;
-    width: 90%; /* Responsive width */
-    max-width: 400px; /* Limit width on larger screens */
+    width: 90%;
+    max-width: 400px;
 }
 
-/* Popup Content */
 .popup-content {
     text-align: center;
-}
-
-.popup-content h2 {
-    font-family: 'Creepster', sans-serif;
-    color: #ff4444;
-    font-size: 1.8em;
-    margin-bottom: 1em;
 }
 
 .popup-content button,
@@ -99,9 +99,77 @@ header img {
     margin: 20px auto;
 }
 
+/* About Section */
+.about-text {
+    font-family: 'Creepster', sans-serif; /* Stylish horror font */
+    font-size: 1.5em; /* Larger font size */
+    color: #ffd700; /* Gold text for emphasis */
+    line-height: 1.6; /* Adjusted line spacing for better readability */
+    margin: 20px auto; /* Add spacing around the text */
+    max-width: 800px; /* Limit text width for better layout */
+    text-align: center; /* Center-align the text */
+}
+
+/* Music Section */
+#music {
+    background-image: url('SINGEL-ferdig-sepia.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 60%; /* Horizontally center, vertically near the top */
+    padding: 2em;
+    border-bottom: 2px solid #444;
+    color: #fff;
+}
+
+#music h2 {
+    font-size: 2em;
+    margin-bottom: 1em;
+}
+
+.platform-logo {
+    width: 15%;
+    max-width: 80px;
+    height: auto;
+    margin: 0.5em;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.platform-logo:hover {
+    transform: scale(1.1);
+    filter: brightness(1.2);
+}
+
 /* Footer */
 footer {
-    margin-top: 20px;
+    background-color: #1b1b1b;
+    padding: 2em;
     color: #b3b3b3;
     font-size: 0.9em;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .platform-logo {
+        width: 20%;
+        max-width: 60px;
+    }
+
+    .about-text {
+        font-size: 1.3em; /* Slightly smaller font for tablets */
+    }
+}
+
+@media (max-width: 480px) {
+    header img {
+        max-width: 300px;
+    }
+
+    .platform-logo {
+        width: 25%;
+        max-width: 50px;
+    }
+
+    .about-text {
+        font-size: 1.2em; /* Smaller font for mobile devices */
+    }
 }
