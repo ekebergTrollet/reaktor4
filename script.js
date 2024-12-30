@@ -16,13 +16,13 @@ window.onload = function () {
         setTimeout(() => {
             popup.style.display = 'none';
             popup.classList.remove('fade-out');
-            mainContent.style.display = 'block'; // Show the main content
-        }, 1000); // Matches fade-out duration
+            mainContent.style.display = 'block';
+        }, 1000);
     });
 
     // Handle AJAX Form Submission
     document.getElementById('newsletter-form').addEventListener('submit', function (e) {
-        e.preventDefault(); // Prevent default form submission
+        e.preventDefault();
         const form = e.target;
         const formData = new FormData(form);
         const successMessage = document.getElementById('success-message');
@@ -36,8 +36,8 @@ window.onload = function () {
         })
             .then((response) => {
                 if (response.ok) {
-                    form.style.display = 'none'; // Hide the form
-                    successMessage.style.display = 'block'; // Show success message
+                    form.style.display = 'none';
+                    successMessage.style.display = 'block';
                 } else {
                     alert('Oops! There was a problem submitting your form.');
                 }
