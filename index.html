@@ -2,175 +2,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reaktor4 - Join the Newsletter</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>Reaktor4 - Official Website</title>
 
     <!-- Load Horror Font -->
     <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
 
     <!-- Custom Styles -->
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #0d0d0d;
-            color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-            text-align: center;
-            line-height: 1.6;
-        }
+    <link rel="stylesheet" href="styles.css">
 
-        h2 {
-            font-family: 'Creepster', sans-serif;
-            color: #ff4444;
-            text-transform: uppercase;
-            font-size: 2em;
-            margin-bottom: 1em;
-        }
-
-        /* Newsletter Popup */
-        .popup {
-            display: none;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            z-index: 1000;
-            background-color: rgba(0, 0, 0, 0.9);
-            color: #fff;
-            border-radius: 10px;
-            padding: 2em;
-            box-shadow: 0px 0px 10px 2px #ff4444;
-            width: 90%;
-            max-width: 400px;
-        }
-
-        .popup-content {
-            text-align: center;
-        }
-
-        .popup-content button,
-        .popup-content input[type="email"] {
-            background-color: #ff4444;
-            color: #fff;
-            border: none;
-            padding: 0.7em 1.5em;
-            cursor: pointer;
-            border-radius: 5px;
-            margin-top: 1em;
-            font-size: 1em;
-        }
-
-        .popup-content button:hover {
-            background-color: #d32f2f;
-        }
-
-        .popup-content input[type="email"] {
-            width: 100%;
-            max-width: 300px;
-            margin: 0.5em 0;
-            padding: 0.5em;
-            border: 1px solid #444;
-            border-radius: 5px;
-            font-size: 1em;
-        }
-
-        .fade-in {
-            animation: fadeIn 1s ease forwards;
-        }
-
-        .fade-out {
-            animation: fadeOut 1s ease forwards;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-
-        @keyframes fadeOut {
-            from {
-                opacity: 1;
-            }
-            to {
-                opacity: 0;
-            }
-        }
-
-        main {
-            display: none; /* Hide main content initially */
-        }
-
-        header img {
-            width: 100%;
-            max-width: 600px;
-            height: auto;
-            margin: 20px auto;
-        }
-
-        footer {
-            margin-top: 20px;
-            color: #b3b3b3;
-            font-size: 0.9em;
-        }
-    </style>
-
-    <!-- Custom Script -->
-    <script>
-        window.onload = function () {
-            const popup = document.getElementById('newsletter-popup');
-            const closePopup = document.getElementById('close-popup');
-            const mainContent = document.getElementById('main-content');
-
-            // Show the popup after 8 seconds
-            setTimeout(() => {
-                popup.style.display = 'flex';
-                popup.classList.add('fade-in');
-            }, 8000);
-
-            // Close the popup and show the main content
-            closePopup.addEventListener('click', () => {
-                popup.classList.remove('fade-in');
-                popup.classList.add('fade-out');
-                setTimeout(() => {
-                    popup.style.display = 'none';
-                    popup.classList.remove('fade-out');
-                    mainContent.style.display = 'block';
-                }, 1000);
-            });
-
-            // Form submission via AJAX
-            document.getElementById('newsletter-form').addEventListener('submit', function (e) {
-                e.preventDefault();
-                const form = e.target;
-                const formData = new FormData(form);
-                const successMessage = document.getElementById('success-message');
-
-                fetch('https://formspree.io/f/xannbwvb', {
-                    method: 'POST',
-                    body: formData,
-                    headers: {
-                        Accept: 'application/json',
-                    },
-                })
-                    .then((response) => {
-                        if (response.ok) {
-                            form.style.display = 'none';
-                            successMessage.style.display = 'block';
-                        } else {
-                            alert('Oops! There was a problem submitting your form.');
-                        }
-                    })
-                    .catch(() => {
-                        alert('Oops! There was a problem submitting your form.');
-                    });
-            });
-        };
-    </script>
+    <!-- Custom JavaScript -->
+    <script defer src="script.js"></script>
 </head>
 <body>
     <!-- Newsletter Pop-up -->
@@ -193,12 +35,40 @@
     <!-- Main Content -->
     <main id="main-content">
         <header>
-            <img src="Reaktor4-logo.png" alt="Reaktor4 Banner">
+            <img src="Reaktor4-logo-2660.png" alt="Reaktor4 Banner" class="banner-logo">
         </header>
-        <section>
+
+        <section id="about">
             <h2>About Reaktor4</h2>
-            <p>Reaktor4 fuses the raw energy of punk, the upbeat rhythms of ska, and the intensity of metal. We're here to break the rules, make you move, and bring chaos to the stage.</p>
+            <p class="about-text">
+                Reaktor4 fuses the raw energy of punk,<br>
+                the upbeat rhythms of ska,<br>
+                and the intensity of metal.<br>
+                We're here to break the rules,<br>
+                make you move,<br>
+                and bring chaos to the stage.
+            </p>
         </section>
+
+        <section id="music">
+            <h2>Listen to Reaktor4</h2>
+            
+            <div class="streaming-links">
+                <a href="https://www.youtube.com/@Reaktor4official" target="_blank">
+                    <img src="youtube-logo.png" alt="YouTube" class="platform-logo">
+                </a>
+                <a href="spotify:album:7zZ0OnJtSUNtx2nAxpune3" target="_blank">
+                    <img src="spotify-logo-spotify-symbol-3.png" alt="Spotify" class="platform-logo">
+                </a>
+                <a href="https://www.instagram.com/reaktor4official/" target="_blank">
+                    <img src="pngtree-instagram-social-media-icon-png-image_3572472.png" alt="Instagram" class="platform-logo">
+                </a>
+                <a href="https://www.tiktok.com/@reaktor4official?_t=8ritxzRfwH8&_r=1" target="_blank">
+                    <img src="tiktok-logo-icon.png" alt="TikTok" class="platform-logo">
+                </a>
+            </div>
+        </section>
+
         <footer>
             <p>&copy; ℗ 2024 Reaktor4. All rights reserved.</p>
         </footer>
