@@ -8,6 +8,9 @@
     <!-- Load Horror Font -->
     <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
 
+    <!-- Load Google reCAPTCHA API -->
+    <script src="https://www.google.com/recaptcha/api.js"></script>
+
     <!-- Custom Styles -->
     <link rel="stylesheet" href="styles.css">
 
@@ -20,14 +23,25 @@
         <div class="popup-content">
             <h2>Join the Reaktor4 Newsletter!</h2>
             <p>Stay updated on our latest tour dates, music releases, and more!</p>
-            <form id="newsletter-form" method="POST">
+            <form id="newsletter-form" method="POST" action="https://formspree.io/f/xannbwvb">
                 <label for="email">Your Email:</label>
                 <input id="email" name="email" type="email" placeholder="Enter your email" required>
-                <button type="submit">Sign Up</button>
+                
+                <!-- reCAPTCHA v3 Integration -->
+                <button class="g-recaptcha"
+                        data-sitekey="6LeoL6kqAAAAAJoZJxEfpC2Ts9CQppye4gqH1SDV"
+                        data-callback="onSubmit"
+                        data-action="submit">
+                    Sign Up
+                </button>
             </form>
+
+            <!-- Success Message -->
             <p id="success-message" style="display: none; color: #4caf50; font-size: 1.2em; margin-top: 1em;">
                 Thank you for signing up!
             </p>
+
+            <!-- Close Popup Button -->
             <button id="close-popup">Close</button>
         </div>
     </div>
@@ -52,7 +66,6 @@
 
         <section id="music">
             <h2>Listen to Reaktor4</h2>
-            
             <div class="streaming-links">
                 <a href="https://www.youtube.com/@Reaktor4official" target="_blank">
                     <img src="youtube-logo.png" alt="YouTube" class="platform-logo">
