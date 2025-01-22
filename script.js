@@ -20,30 +20,56 @@ window.onload = function () {
         }, 1000);
     });
 
-    // Handle AJAX Form Submission
+    // Handle reCAPTCHA Form Submission
     document.getElementById('newsletter-form').addEventListener('submit', function (e) {
-        e.preventDefault();
-        const form = e.target;
-        const formData = new FormData(form);
-        const successMessage = document.getElementById('success-message');
+        e.preventDefault(); // Prevent default form submission
 
-        fetch('https://formspree.io/f/xannbwvb', {
-            method: 'POST',
-            body: formData,
-            headers: {
-                Accept: 'application/json',
-            },
-        })
-            .then((response) => {
-                if (response.ok) {
-                    form.style.display = 'none';
-                    successMessage.style.display = 'block';
-                } else {
-                    alert('Oops! There was a problem submitting your form.');
-                }
-            })
-            .catch(() => {
-                alert('Oops! There was a problem submitting your form.');
+        // Check if reCAPTCHA is loaded
+        if (!window.grecaptcha) {
+            alert('Google reCAPTCHA failed to load. Please try again later.');
+            return;
+        }
+
+        // Trigger Google reCAPTCHA v3
+        grecaptcha.ready(() => {
+            grecaptcha.execute('6LeoL6kqAAAAAJoZJxEfpC2Ts9CQppye4gqH1SDV', { action: 'submit' }).then((token) => {
+                // Append reCAPTCHA token to the form data
+                const form = e.target;
+                const formData = new FormData(form);
+                formData.append('g-recaptcha-response', token);
+
+                const successMessage = document.getElementById('success-message');
+                const submitButton = form.querySelector('button');
+                submitButton.textContent = 'Submitting...';
+                submitButton.disabled = true;
+
+                // Submit the form data to Formspree
+                fetch('https://formspree.io/f/xannbwvb', {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        Accept: 'application/json',
+                    },
+                })
+                    .then((response) => {
+                        submitButton.textContent = 'Sign Up';
+                        submitButton.disabled = false;
+
+                        if (response.ok) {
+                            form.style.display = 'none';
+                            successMessage.style.display = 'block';
+                        } else {
+                            return response.json().then((data) => {
+                                alert(data.error || 'Oops! There was a problem submitting your form.');
+                            });
+                        }
+                    })
+                    .catch(() => {
+                        submitButton.textContent = 'Sign Up';
+                        submitButton.disabled = false;
+                        alert('Oops! There was a problem submitting your form.');
+                    });
             });
+        });
     });
 };
