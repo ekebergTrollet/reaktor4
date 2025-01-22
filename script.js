@@ -1,3 +1,15 @@
+require('dotenv').config();
+const apiKey = process.env.GOOGLE_API_KEY;
+console.log('API Key:', apiKey);
+fetch(`https://recaptchaenterprise.googleapis.com/v1/projects/rising-memory-229513/assessments`, {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${apiKey}`,
+    },
+    body: JSON.stringify(requestBody),
+});
+
 window.onload = function () {
     const popup = document.getElementById('newsletter-popup');
     const closePopup = document.getElementById('close-popup');
