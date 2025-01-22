@@ -64,6 +64,12 @@ h1, h2, h3 {
     font-size: 1em;
 }
 
+.popup-content button:focus,
+.popup-content input[type="email"]:focus {
+    outline: 2px solid #ffd700;
+    outline-offset: 2px;
+}
+
 /* Animations */
 .fade-in {
     animation: fadeIn 1s ease forwards;
@@ -94,20 +100,21 @@ h1, h2, h3 {
 /* Header */
 header img {
     width: 100%;
-    max-width: 600px; /* Prevents logo from being too large */
-    height: auto; /* Maintains aspect ratio */
+    max-width: 600px;
+    max-height: 300px;
+    object-fit: contain;
     margin: 20px auto;
 }
 
 /* About Section */
 .about-text {
-    font-family: 'Creepster', sans-serif; /* Stylish horror font */
-    font-size: 1.5em; /* Larger font size */
-    color: #ffd700; /* Gold text for emphasis */
-    line-height: 1.6; /* Adjusted line spacing for better readability */
-    margin: 20px auto; /* Add spacing around the text */
-    max-width: 800px; /* Limit text width for better layout */
-    text-align: center; /* Center-align the text */
+    font-family: 'Creepster', sans-serif;
+    font-size: 1.5em;
+    color: #ffd700;
+    line-height: 1.6;
+    margin: 20px auto;
+    max-width: 800px;
+    text-align: center;
 }
 
 /* Music Section */
@@ -115,7 +122,7 @@ header img {
     background-image: url('SINGEL-ferdig-sepia.png');
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: 50% 60%; /* Horizontally center, vertically near the top */
+    background-position: center bottom;
     padding: 2em;
     border-bottom: 2px solid #444;
     color: #fff;
@@ -135,8 +142,8 @@ header img {
 }
 
 .platform-logo:hover {
-    transform: scale(1.1);
-    filter: brightness(1.2);
+    transform: scale(1.2);
+    filter: brightness(1.5) drop-shadow(0 0 10px #ff4444);
 }
 
 /* Footer */
@@ -155,7 +162,7 @@ footer {
     }
 
     .about-text {
-        font-size: 1.3em; /* Slightly smaller font for tablets */
+        font-size: 1.3em;
     }
 }
 
@@ -170,6 +177,10 @@ footer {
     }
 
     .about-text {
-        font-size: 1.2em; /* Smaller font for mobile devices */
+        font-size: 1.2em;
+    }
+
+    .popup {
+        padding: 1.5em;
     }
 }
