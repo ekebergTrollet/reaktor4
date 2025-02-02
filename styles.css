@@ -1,186 +1,222 @@
 /* General Styles */
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #0d0d0d;
-    color: #f4f4f4;
-    margin: 0;
-    padding: 0;
-    text-align: center;
-    line-height: 1.6;
+  font-family: 'Arial', sans-serif;
+  background-color: #0d0d0d;
+  color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  line-height: 1.6;
 }
 
 /* Horror Font for Headings */
 h1, h2, h3 {
-    font-family: 'Creepster', sans-serif;
-    color: #ff4444;
-    text-transform: uppercase;
-    margin-bottom: 10px;
+  font-family: 'Creepster', sans-serif;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+/* Section Headings: neon fuchsia-purple-pink and increased size */
+#about h2,
+#music h2 {
+  color: #FF77FF;
+  font-size: 3em;
+}
+
+/* Change about-text to white */
+.about-text {
+  font-family: 'Creepster', sans-serif;
+  font-size: 1.5em;
+  color: #ffffff;
+  line-height: 1.6;
+  margin: 20px auto;
+  max-width: 800px;
+  text-align: center;
+}
+
+/* Neon Lime Green horizontal line for section separation */
+.section-line {
+  width: 80%;
+  height: 4px;
+  background-color: #CCFF00;
+  margin: 20px auto;
+}
+
+/* Spiderweb corner images */
+.spider-corner {
+  position: fixed;
+  width: 300px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: 500;
+}
+
+/* Top Left Spiderweb */
+.spider-corner.top-left {
+  top: 0;
+  left: 0;
+  background-image: url('spider-left.png');
+}
+
+/* Top Right Spiderweb */
+.spider-corner.top-right {
+  top: 0;
+  right: 0;
+  background-image: url('spiderweb-right.png');
 }
 
 /* Newsletter Popup */
 .popup {
-    display: none;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 1000;
-    background-color: rgba(0, 0, 0, 0.9);
-    color: #fff;
-    border-radius: 10px;
-    padding: 2em;
-    box-shadow: 0px 0px 10px 2px #ff4444;
-    width: 90%;
-    max-width: 400px;
+  display: none; /* Hidden by default */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  background-color: rgba(0, 0, 0, 0.9);
+  color: #fff;
+  border-radius: 10px;
+  padding: 2em;
+  /* Changed box-shadow to neon lime-green */
+  box-shadow: 0px 0px 10px 2px #CCFF00;
+  width: 90%;
+  max-width: 400px;
 }
 
 .popup-content {
-    text-align: center;
+  text-align: center;
 }
 
+/* Pop-up Heading in neon fuchsia */
+.popup-content h2 {
+  color: #FF77FF;
+}
+
+/* Close and Sign Up Buttons: neon fuchsia */
 .popup-content button,
 .popup-content input[type="email"] {
-    background-color: #ff4444;
-    color: #fff;
-    border: none;
-    padding: 0.7em 1.5em;
-    cursor: pointer;
-    border-radius: 5px;
-    margin-top: 1em;
-    font-size: 1em;
+  background-color: #FF77FF; /* Changed from red to neon fuchsia */
+  color: #fff;
+  border: none;
+  padding: 0.7em 1.5em;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 1em;
+  font-size: 1em;
 }
 
 .popup-content button:hover {
-    background-color: #d32f2f;
+  /* A slightly darker neon fuchsia on hover */
+  background-color: #E066FF;
 }
 
+/* Email input: change border and background to white */
 .popup-content input[type="email"] {
-    width: 100%;
-    max-width: 300px;
-    margin: 0.5em 0;
-    padding: 0.5em;
-    border: 1px solid #444;
-    border-radius: 5px;
-    font-size: 1em;
+  width: 100%;
+  max-width: 300px;
+  margin: 0.5em 0;
+  padding: 0.5em;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  font-size: 1em;
+  background-color: #fff;
+  color: #000;
 }
 
 .popup-content button:focus,
 .popup-content input[type="email"]:focus {
-    outline: 2px solid #ffd700;
-    outline-offset: 2px;
+  outline: 2px solid #ffd700;
+  outline-offset: 2px;
 }
 
 /* Animations */
 .fade-in {
-    animation: fadeIn 1s ease forwards;
+  animation: fadeIn 1s ease forwards;
 }
 
 .fade-out {
-    animation: fadeOut 1s ease forwards;
+  animation: fadeOut 1s ease forwards;
 }
 
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 @keyframes fadeOut {
-    from {
-        opacity: 1;
-    }
-    to {
-        opacity: 0;
-    }
+  from { opacity: 1; }
+  to { opacity: 0; }
 }
 
 /* Header */
 header img {
-    width: 100%;
-    max-width: 600px;
-    max-height: 300px;
-    object-fit: contain;
-    margin: 20px auto;
+  width: 100%;
+  max-width: 800px;
+  max-height: 600px;
+  object-fit: contain;
+  margin: 20px auto;
 }
 
-/* About Section */
-.about-text {
-    font-family: 'Creepster', sans-serif;
-    font-size: 1.5em;
-    color: #ffd700;
-    line-height: 1.6;
-    margin: 20px auto;
-    max-width: 800px;
-    text-align: center;
+/* Haunted Mansion Container: now displays the full image */
+.haunted-mansion-container {
+  width: 100%;
+  margin-bottom: 30px;
+}
+.haunted-mansion-container img {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
-/* Music Section */
-#music {
-    background-image: url('SINGEL-ferdig-sepia.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center bottom;
-    padding: 2em;
-    border-bottom: 2px solid #444;
-    color: #fff;
-}
-
-#music h2 {
-    font-size: 2em;
-    margin-bottom: 1em;
-}
-
+/* Streaming Links and Platform Logos */
 .platform-logo {
-    width: 15%;
-    max-width: 80px;
-    height: auto;
-    margin: 0.5em;
-    transition: transform 0.3s ease, filter 0.3s ease;
+  width: 15%;
+  max-width: 80px;
+  height: auto;
+  margin: 0.5em;
+  transition: transform 0.3s ease, filter 0.3s ease;
 }
 
 .platform-logo:hover {
-    transform: scale(1.2);
-    filter: brightness(1.5) drop-shadow(0 0 10px #ff4444);
+  transform: scale(1.2);
+  filter: brightness(1.5) drop-shadow(0 0 10px #ff4444);
 }
 
 /* Footer */
 footer {
-    background-color: #1b1b1b;
-    padding: 2em;
-    color: #b3b3b3;
-    font-size: 0.9em;
+  background-color: #1b1b1b;
+  padding: 2em;
+  color: #b3b3b3;
+  font-size: 0.9em;
 }
 
 /* Media Queries */
 @media (max-width: 768px) {
-    .platform-logo {
-        width: 20%;
-        max-width: 60px;
-    }
+  .platform-logo {
+    width: 20%;
+    max-width: 60px;
+  }
 
-    .about-text {
-        font-size: 1.3em;
-    }
+  .about-text {
+    font-size: 1.3em;
+  }
 }
 
 @media (max-width: 480px) {
-    header img {
-        max-width: 300px;
-    }
+  header img {
+    max-width: 300px;
+  }
 
-    .platform-logo {
-        width: 25%;
-        max-width: 50px;
-    }
+  .platform-logo {
+    width: 25%;
+    max-width: 50px;
+  }
 
-    .about-text {
-        font-size: 1.2em;
-    }
+  .about-text {
+    font-size: 1.2em;
+  }
 
-    .popup {
-        padding: 1.5em;
-    }
+  .popup {
+    padding: 1.5em;
+  }
 }
