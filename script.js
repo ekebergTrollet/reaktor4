@@ -1,87 +1,82 @@
-require('dotenv').config();
-const apiKey = process.env.GOOGLE_API_KEY;
-console.log('API Key:', apiKey);
-fetch(`https://recaptchaenterprise.googleapis.com/v1/projects/rising-memory-229513/assessments`, {
-    method: 'POST',
-    headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${apiKey}`,
-    },
-    body: JSON.stringify(requestBody),
-});
+// Wait until the DOM is fully loaded
+document.addEventListener('DOMContentLoaded', () => {
+  const popup = document.getElementById('newsletter-popup');
+  const closePopup = document.getElementById('close-popup');
+  const form = document.getElementById('newsletter-form');
+  const successMessage = document.getElementById('success-message');
 
-window.onload = function () {
-    const popup = document.getElementById('newsletter-popup');
-    const closePopup = document.getElementById('close-popup');
-    const mainContent = document.getElementById('main-content');
+  // Function to show the popup using flex layout
+  const showPopup = () => {
+    popup.style.display = 'flex';
+    popup.classList.add('fade-in');
+  };
 
-    // Show the popup after 8 seconds
+  // Function to hide the popup with fade-out effect
+  const hidePopup = () => {
+    popup.classList.remove('fade-in');
+    popup.classList.add('fade-out');
     setTimeout(() => {
-        popup.style.display = 'flex';
-        popup.classList.add('fade-in');
-    }, 8000);
+      popup.style.display = 'none';
+      popup.classList.remove('fade-out');
+    }, 1000);
+  };
 
-    // Close the popup and show the main content
-    closePopup.addEventListener('click', () => {
-        popup.classList.remove('fade-in');
-        popup.classList.add('fade-out');
-        setTimeout(() => {
-            popup.style.display = 'none';
-            popup.classList.remove('fade-out');
-            mainContent.style.display = 'block';
-        }, 1000);
+  // Show the popup after 8 seconds
+  setTimeout(showPopup, 8000);
+
+  // Close button event listener
+  closePopup.addEventListener('click', hidePopup);
+
+  // Handle reCAPTCHA and form submission
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    // Ensure grecaptcha is available
+    if (typeof grecaptcha === 'undefined') {
+      alert('Google reCAPTCHA failed to load. Please try again later.');
+      return;
+    }
+
+    // Disable the submit button during processing
+    const submitButton = form.querySelector('button[type="submit"]');
+    submitButton.textContent = 'Submitting...';
+    submitButton.disabled = true;
+
+    // Execute reCAPTCHA v3 with the provided site key
+    grecaptcha.ready(() => {
+      grecaptcha.execute('6LeoL6kqAAAAAJoZJxEfpC2Ts9CQppye4gqH1SDV', { action: 'submit' }).then((token) => {
+        // Append the reCAPTCHA token to the form data
+        const formData = new FormData(form);
+        formData.append('g-recaptcha-response', token);
+
+        // Send the form data to Formspree
+        fetch(form.action, {
+          method: 'POST',
+          body: formData,
+          headers: {
+            Accept: 'application/json',
+          },
+        })
+          .then((response) => {
+            submitButton.textContent = 'Sign Up';
+            submitButton.disabled = false;
+
+            if (response.ok) {
+              // Hide the form and show the success message
+              form.style.display = 'none';
+              successMessage.style.display = 'block';
+            } else {
+              return response.json().then((data) => {
+                alert(data.error || 'Oops! There was a problem submitting your form.');
+              });
+            }
+          })
+          .catch(() => {
+            submitButton.textContent = 'Sign Up';
+            submitButton.disabled = false;
+            alert('Oops! There was a problem submitting your form.');
+          });
+      });
     });
-
-    // Handle reCAPTCHA Form Submission
-    document.getElementById('newsletter-form').addEventListener('submit', function (e) {
-        e.preventDefault(); // Prevent default form submission
-
-        // Check if reCAPTCHA is loaded
-        if (!window.grecaptcha) {
-            alert('Google reCAPTCHA failed to load. Please try again later.');
-            return;
-        }
-
-        // Trigger Google reCAPTCHA v3
-        grecaptcha.ready(() => {
-            grecaptcha.execute('6LeoL6kqAAAAAJoZJxEfpC2Ts9CQppye4gqH1SDV', { action: 'submit' }).then((token) => {
-                // Append reCAPTCHA token to the form data
-                const form = e.target;
-                const formData = new FormData(form);
-                formData.append('g-recaptcha-response', token);
-
-                const successMessage = document.getElementById('success-message');
-                const submitButton = form.querySelector('button');
-                submitButton.textContent = 'Submitting...';
-                submitButton.disabled = true;
-
-                // Submit the form data to Formspree
-                fetch('https://formspree.io/f/xannbwvb', {
-                    method: 'POST',
-                    body: formData,
-                    headers: {
-                        Accept: 'application/json',
-                    },
-                })
-                    .then((response) => {
-                        submitButton.textContent = 'Sign Up';
-                        submitButton.disabled = false;
-
-                        if (response.ok) {
-                            form.style.display = 'none';
-                            successMessage.style.display = 'block';
-                        } else {
-                            return response.json().then((data) => {
-                                alert(data.error || 'Oops! There was a problem submitting your form.');
-                            });
-                        }
-                    })
-                    .catch(() => {
-                        submitButton.textContent = 'Sign Up';
-                        submitButton.disabled = false;
-                        alert('Oops! There was a problem submitting your form.');
-                    });
-            });
-        });
-    });
-};
+  });
+});
