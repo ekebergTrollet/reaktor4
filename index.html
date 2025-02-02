@@ -1,90 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-    <title>Reaktor4 - Official Website</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
+  <title>Reaktor4 - Official Website</title>
 
-    <!-- Load Horror Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
+  <!-- Load Horror Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet" />
 
-    <!-- Load Google reCAPTCHA API -->
-    <script src="https://www.google.com/recaptcha/api.js"></script>
+  <!-- Load Google reCAPTCHA API (v3) -->
+  <script src="https://www.google.com/recaptcha/api.js?render=6LeoL6kqAAAAAJoZJxEfpC2Ts9CQppye4gqH1SDV"></script>
 
-    <!-- Custom Styles -->
-    <link rel="stylesheet" href="styles.css">
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="styles.css" />
 
-    <!-- Custom JavaScript -->
-    <script defer src="script.js"></script>
+  <!-- Custom JavaScript -->
+  <script defer src="script.js"></script>
 </head>
 <body>
-    <!-- Newsletter Pop-up -->
-    <div id="newsletter-popup" class="popup">
-        <div class="popup-content">
-            <h2>Join the Reaktor4 Newsletter!</h2>
-            <p>Stay updated on our latest tour dates, music releases, and more!</p>
-            <form id="newsletter-form" method="POST" action="https://formspree.io/f/xannbwvb">
-                <label for="email">Your Email:</label>
-                <input id="email" name="email" type="email" placeholder="Enter your email" required>
-                
-                <!-- reCAPTCHA v3 Integration -->
-                <button class="g-recaptcha"
-                        data-sitekey="6LeoL6kqAAAAAJoZJxEfpC2Ts9CQppye4gqH1SDV"
-                        data-callback="onSubmit"
-                        data-action="submit">
-                    Sign Up
-                </button>
-            </form>
+  <!-- Spiderweb in top corners -->
+  <div class="spider-corner top-left"></div>
+  <div class="spider-corner top-right"></div>
 
-            <!-- Success Message -->
-            <p id="success-message" style="display: none; color: #4caf50; font-size: 1.2em; margin-top: 1em;">
-                Thank you for signing up!
-            </p>
+  <!-- Newsletter Pop-up -->
+  <div id="newsletter-popup" class="popup">
+    <div class="popup-content">
+      <h2>Join the Reaktor4 Newsletter!</h2>
+      <p>Stay updated on our latest tour dates, music releases, and more!</p>
+      <form id="newsletter-form" method="POST" action="https://formspree.io/f/xannbwvb">
+        <label for="email">Your Email:</label>
+        <input id="email" name="email" type="email" placeholder="Enter your email" required />
+        <button type="submit">Sign Up</button>
+      </form>
 
-            <!-- Close Popup Button -->
-            <button id="close-popup">Close</button>
-        </div>
+      <!-- Success Message -->
+      <p id="success-message" style="display: none; color: #4caf50; font-size: 1.2em; margin-top: 1em;">
+        Thank you for signing up!
+      </p>
+
+      <!-- Close Popup Button -->
+      <button id="close-popup">Close</button>
     </div>
+  </div>
 
-    <!-- Main Content -->
-    <main id="main-content">
-        <header>
-            <img src="Reaktor4-logo-2660.png" alt="Reaktor4 Banner" class="banner-logo">
-        </header>
+  <!-- Main Content -->
+  <main id="main-content">
+    <header>
+      <img src="Reaktor4-logo-2660.png" alt="Reaktor4 Banner" class="banner-logo" />
+    </header>
 
-        <section id="about">
-            <h2>About Reaktor4</h2>
-            <p class="about-text">
-                Reaktor4 fuses the raw energy of punk,<br>
-                the upbeat rhythms of ska,<br>
-                and the intensity of metal.<br>
-                We're here to break the rules,<br>
-                make you move,<br>
-                and bring chaos to the stage.
-            </p>
-        </section>
+    <section id="about">
+      <h2>About Reaktor4</h2>
+      <!-- Neon Lime Green Horizontal Line -->
+      <div class="section-line"></div>
+      <p class="about-text">
+        Reaktor4 fuses the raw energy of punk,<br />
+        the upbeat rhythms of ska,<br />
+        and the intensity of metal.<br />
+        We're here to break the rules,<br />
+        make you move,<br />
+        and bring chaos to the stage.
+      </p>
+      <!-- Neon Lime Green Horizontal Line -->
+      <div class="section-line"></div>
+    </section>
 
-        <section id="music">
-            <h2>Listen to Reaktor4</h2>
-            <div class="streaming-links">
-                <a href="https://www.youtube.com/@Reaktor4official" target="_blank">
-                    <img src="youtube-logo.png" alt="YouTube" class="platform-logo">
-                </a>
-                <a href="spotify:album:7zZ0OnJtSUNtx2nAxpune3" target="_blank">
-                    <img src="spotify-logo-spotify-symbol-3.png" alt="Spotify" class="platform-logo">
-                </a>
-                <a href="https://www.instagram.com/reaktor4official/" target="_blank">
-                    <img src="pngtree-instagram-social-media-icon-png-image_3572472.png" alt="Instagram" class="platform-logo">
-                </a>
-                <a href="https://www.tiktok.com/@reaktor4official?_t=8ritxzRfwH8&_r=1" target="_blank">
-                    <img src="tiktok-logo-icon.png" alt="TikTok" class="platform-logo">
-                </a>
-            </div>
-        </section>
+    <section id="music">
+      <h2>Listen to Reaktor4</h2>
+      <!-- Haunted Mansion Container showing the full image -->
+      <div class="haunted-mansion-container">
+        <img src="Haunted-Mansion.jpg" alt="Haunted Mansion" />
+      </div>
+      <div class="streaming-links">
+        <a href="https://www.youtube.com/@Reaktor4official" target="_blank">
+          <img src="youtube-logo.png" alt="YouTube" class="platform-logo" />
+        </a>
+        <a href="spotify:album:7zZ0OnJtSUNtx2nAxpune3" target="_blank">
+          <img src="spotify-logo-spotify-symbol-3.png" alt="Spotify" class="platform-logo" />
+        </a>
+        <a href="https://www.instagram.com/reaktor4official/" target="_blank">
+          <img src="pngtree-instagram-social-media-icon-png-image_3572472.png" alt="Instagram" class="platform-logo" />
+        </a>
+        <a href="https://www.tiktok.com/@reaktor4official?_t=8ritxzRfwH8&_r=1" target="_blank">
+          <img src="tiktok-logo-icon.png" alt="TikTok" class="platform-logo" />
+        </a>
+      </div>
+    </section>
 
-        <footer>
-            <p>&copy; ℗ 2024 Reaktor4. All rights reserved.</p>
-        </footer>
-    </main>
+    <footer>
+      <p>&copy; ℗ 2024 Sagplass Records. All rights reserved.</p>
+    </footer>
+  </main>
 </body>
 </html>
