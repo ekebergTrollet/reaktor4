@@ -45,7 +45,7 @@ h1, h2, h3 {
 /* Spiderweb corner images */
 .spider-corner {
   position: fixed;
-  width: 300px;
+  width: 300px; /* Adjust size as needed */
   background-size: contain;
   background-repeat: no-repeat;
   z-index: 500;
@@ -95,7 +95,7 @@ h1, h2, h3 {
 /* Close and Sign Up Buttons: neon fuchsia */
 .popup-content button,
 .popup-content input[type="email"] {
-  background-color: #FF77FF; /* Changed from red to neon fuchsia */
+  background-color: #FF77FF;
   color: #fff;
   border: none;
   padding: 0.7em 1.5em;
@@ -106,7 +106,6 @@ h1, h2, h3 {
 }
 
 .popup-content button:hover {
-  /* A slightly darker neon fuchsia on hover */
   background-color: #E066FF;
 }
 
@@ -127,6 +126,15 @@ h1, h2, h3 {
 .popup-content input[type="email"]:focus {
   outline: 2px solid #ffd700;
   outline-offset: 2px;
+}
+
+/* Hide the g-recaptcha-response field but keep it available for validation */
+#g-recaptcha-response {
+  display: block !important;
+  position: absolute;
+  margin: -50px 0 0 0 !important;
+  z-index: -999999;
+  opacity: 0;
 }
 
 /* Animations */
@@ -157,7 +165,7 @@ header img {
   margin: 20px auto;
 }
 
-/* Haunted Mansion Container: now displays the full image */
+/* Haunted Mansion Container: displays the full image */
 .haunted-mansion-container {
   width: 100%;
   margin-bottom: 30px;
