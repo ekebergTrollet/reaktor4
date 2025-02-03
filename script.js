@@ -1,4 +1,12 @@
-// Wait until the DOM is fully loaded
+// This snippet ensures that if the hidden reCAPTCHA field is present, it is marked as required.
+window.onload = function() { 
+  var recaptchaField = document.getElementById('g-recaptcha-response'); 
+  if (recaptchaField) { 
+    recaptchaField.setAttribute('required', 'required'); 
+  }
+};
+
+// Wait until the DOM is fully loaded to run our main code.
 document.addEventListener('DOMContentLoaded', () => {
   const popup = document.getElementById('newsletter-popup');
   const closePopup = document.getElementById('close-popup');
@@ -31,8 +39,8 @@ document.addEventListener('DOMContentLoaded', () => {
   form.addEventListener('submit', (e) => {
     e.preventDefault();
 
-    // Ensure grecaptcha is available
-    if (typeof grecaptcha === 'undefined') {
+    // Ensure grecaptcha.enterprise is available
+    if (typeof grecaptcha === 'undefined' || typeof grecaptcha.enterprise === 'undefined') {
       alert('Google reCAPTCHA failed to load. Please try again later.');
       return;
     }
@@ -42,14 +50,19 @@ document.addEventListener('DOMContentLoaded', () => {
     submitButton.textContent = 'Submitting...';
     submitButton.disabled = true;
 
-    // Execute reCAPTCHA v3 with the provided site key
-    grecaptcha.ready(() => {
-      grecaptcha.execute('6LeoL6kqAAAAAJoZJxEfpC2Ts9CQppye4gqH1SDV', { action: 'submit' }).then((token) => {
-        // Append the reCAPTCHA token to the form data
+    // Execute reCAPTCHA Enterprise with the provided site key and desired action
+    grecaptcha.enterprise.execute('6LeoL6kqAAAAAJoZJxEfpC2Ts9CQppye4gqH1SDV', { action: 'submit' })
+      .then((token) => {
+        // Append the token to the hidden field (g-recaptcha-response)
+        const recaptchaField = document.getElementById('g-recaptcha-response');
+        if (recaptchaField) {
+          recaptchaField.value = token;
+        }
+        
+        // Prepare form data including the token field (which is already in the form)
         const formData = new FormData(form);
-        formData.append('g-recaptcha-response', token);
 
-        // Send the form data to Formspree
+        // Submit the form data to Formspree
         fetch(form.action, {
           method: 'POST',
           body: formData,
@@ -77,6 +90,5 @@ document.addEventListener('DOMContentLoaded', () => {
             alert('Oops! There was a problem submitting your form.');
           });
       });
-    });
   });
 });
