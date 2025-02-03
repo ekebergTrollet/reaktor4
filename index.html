@@ -8,8 +8,8 @@
   <!-- Load Horror Font -->
   <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet" />
 
-  <!-- Load Google reCAPTCHA API (v3) -->
-  <script src="https://www.google.com/recaptcha/api.js?render=6LeoL6kqAAAAAJoZJxEfpC2Ts9CQppye4gqH1SDV"></script>
+  <!-- Load Google reCAPTCHA Enterprise API (v3) -->
+  <script src="https://www.google.com/recaptcha/enterprise.js?render=6LeoL6kqAAAAAJoZJxEfpC2Ts9CQppye4gqH1SDV"></script>
 
   <!-- Custom Styles -->
   <link rel="stylesheet" href="styles.css" />
@@ -25,11 +25,14 @@
   <!-- Newsletter Pop-up -->
   <div id="newsletter-popup" class="popup">
     <div class="popup-content">
+      <!-- Pop-up Heading -->
       <h2>Join the Reaktor4 Newsletter!</h2>
       <p>Stay updated on our latest tour dates, music releases, and more!</p>
       <form id="newsletter-form" method="POST" action="https://formspree.io/f/xannbwvb">
         <label for="email">Your Email:</label>
         <input id="email" name="email" type="email" placeholder="Enter your email" required />
+        <!-- Hidden reCAPTCHA response field (must be named g-recaptcha-response) -->
+        <input type="hidden" id="g-recaptcha-response" name="g-recaptcha-response" />
         <button type="submit">Sign Up</button>
       </form>
 
@@ -51,7 +54,7 @@
 
     <section id="about">
       <h2>About Reaktor4</h2>
-      <!-- Neon Lime Green Horizontal Line -->
+      <!-- Neon Lime Green Horizontal Line Above -->
       <div class="section-line"></div>
       <p class="about-text">
         Reaktor4 fuses the raw energy of punk,<br />
@@ -61,7 +64,7 @@
         make you move,<br />
         and bring chaos to the stage.
       </p>
-      <!-- Neon Lime Green Horizontal Line -->
+      <!-- Neon Lime Green Horizontal Line Below -->
       <div class="section-line"></div>
     </section>
 
@@ -88,7 +91,7 @@
     </section>
 
     <footer>
-      <p>&copy; ℗ 2024 Sagplass Records. All rights reserved.</p>
+      <p>&copy; ℗ 2024 Reaktor4. All rights reserved.</p>
     </footer>
   </main>
 </body>
