@@ -16,30 +16,27 @@
 
   <!-- Custom JavaScript -->
   <script defer src="script.js"></script>
+  
+  <!-- Embedded YouTube Video Styling (kept here for convenience) -->
+  <style>
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+      height: 0;
+      overflow: hidden;
+      max-width: 100%;
+      margin: 20px auto;
+    }
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  </style>
 </head>
 <body>
-  <!-- Embedded YouTube video - The Cabin -->
-  <style>
-  .video-container {
-    position: relative;
-    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
-    height: 0;
-    overflow: hidden;
-    max-width: 100%;
-  }
-  .video-container iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-  }
-</style>
-
-<div class="video-container">
-  <iframe src="https://www.youtube.com/embed/o31iiUKcXZU?si=8SN0IXnx-eTpWrMm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-</div>
-
   <!-- Spiderweb in top corners -->
   <div class="spider-corner top-left"></div>
   <div class="spider-corner top-right"></div>
@@ -90,12 +87,20 @@
       <div class="section-line"></div>
     </section>
 
+    <!-- Embedded YouTube Video: Now Placed Under "About Reaktor4" -->
+    <div class="video-container">
+      <iframe src="https://www.youtube.com/embed/o31iiUKcXZU?si=8SN0IXnx-eTpWrMm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+
     <section id="music">
-      <h2>Listen to Reaktor4</h2>
       <!-- Haunted Mansion Container showing the full image -->
       <div class="haunted-mansion-container">
         <img src="Haunted-Mansion.jpg" alt="Haunted Mansion" />
       </div>
+
+      <!-- "Listen to Reaktor4" Heading Moved Here -->
+      <h2>Listen to Reaktor4</h2>
+
       <div class="streaming-links">
         <a href="https://www.youtube.com/@Reaktor4official" target="_blank">
           <img src="youtube-logo.png" alt="YouTube" class="platform-logo" />
