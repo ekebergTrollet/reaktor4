@@ -17,7 +17,7 @@
   <!-- Custom JavaScript -->
   <script defer src="script.js"></script>
   
-  <!-- Embedded YouTube Video Styling (kept here for convenience) -->
+  <!-- Embedded YouTube Video Styling (kept here for convenience) & custom popup z-index -->
   <style>
     .video-container {
       position: relative;
@@ -34,23 +34,20 @@
       width: 100%;
       height: 100%;
     }
-    /* Spotify container fixed to the bottom of the viewport */
+    /* Spotify container placed under the header */
     .spotify-container {
-      position: fixed;       /* Fixed position */
-      bottom: 0;             /* Align to the bottom */
-      left: 50%;             /* Center horizontally */
-      transform: translateX(-50%); /* Center alignment correction */
-      width: 100%;           /* Full width */
-      max-width: 560px;      /* Maximum width for larger screens */
+      margin: 20px auto; /* Vertical spacing */
+      width: 100%;
+      max-width: 560px;  /* Adjust as needed */
       background: rgba(255, 255, 255, 0.9); /* Optional background for clarity */
-      padding: 10px;         /* Padding around the embed */
-      box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2); /* Optional shadow for separation */
+      padding: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Optional shadow for separation */
       box-sizing: border-box;
-      z-index: 1000;         /* Ensure it sits above other content */
     }
-    /* Extra bottom margin to prevent page content from being hidden behind the fixed Spotify container */
-    body {
-      margin-bottom: 180px;  /* Adjust this value based on your Spotify container's height */
+    /* Ensure the newsletter pop-up always appears above other content */
+    .popup {
+      position: fixed; /* Likely already the case, but ensuring it here */
+      z-index: 10000;
     }
   </style>
 </head>
@@ -88,6 +85,19 @@
     <header>
       <img src="Reaktor4-logo-2660.png" alt="Reaktor4 Banner" class="banner-logo" />
     </header>
+
+    <!-- Spotify Container positioned right under the header -->
+    <div class="spotify-container">
+      <iframe style="border-radius:12px" 
+              src="https://open.spotify.com/embed/track/6xFkfTb9e3N1dTHxCgD0G6?utm_source=generator&theme=0" 
+              width="100%" 
+              height="152" 
+              frameBorder="0" 
+              allowfullscreen="" 
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+              loading="lazy">
+      </iframe>
+    </div>
 
     <section id="about">
       <h2>About Reaktor4</h2>
@@ -136,21 +146,8 @@
     </section>
 
     <footer>
-      <p>&copy; ℗ 2024 Sagplass Records. All rights reserved.</p>
+      <p>&copy; ℗ 2024 Reaktor4. All rights reserved.</p>
     </footer>
   </main>
-
-  <!-- Fixed Spotify Embed at the Bottom -->
-  <div class="spotify-container">
-    <iframe style="border-radius:12px" 
-            src="https://open.spotify.com/embed/track/6xFkfTb9e3N1dTHxCgD0G6?utm_source=generator&theme=0" 
-            width="100%" 
-            height="152" 
-            frameBorder="0" 
-            allowfullscreen="" 
-            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
-            loading="lazy">
-    </iframe>
-  </div>
 </body>
 </html>
